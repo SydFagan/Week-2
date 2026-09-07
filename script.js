@@ -64,7 +64,7 @@ function showQuote() {
   quoteText.textContent = quote.text;
   quoteAuthor.textContent = "- " + quote.author;
 
-  quoteCard.src = "Card/" + quote.character + ".png";
+  quoteCard.src = "Cards/" + quote.character + ".png";
   quoteCard.alt = quote.character;
 
 
