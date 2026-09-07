@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deadlock Voice Line Quotes</title>
+    <style>
+      :root {
+        --forest: #1b2a22;
+        --forest-deep: #142019;
+        --ivory: #f1ead9;
+        --ivory-dim: #c9c2af;
+        --gold: #c9a227;
+        --gold-dim: #8e7420;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: var(--forest);
+        color: var(--ivory);
+      }
+
+      body {
+       display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      }
+
+      .flipper {
+        width: 100%;
+        max-width: 640px;
+        position: relative;
+      }
+
+      .quotes {
+        position: relative;
+        background: var(--forest-deep);
+        border: 1px solid rgba(201, 162, 39, 0.35);
+        border-radius: 4px;
+        padding: 48px;
+      }
+
+      .quote-row {
+        display: flex;
+        gap: 28px;
+        align-items: flex-start;
+      }
+
+      #quote-card {
+        width: 130px;
+        height: auto;
+        border-radius: 4px;
+        border: 1px solid rgba(201, 162, 39, 0.35);
+        flex-shrink: 0;
+      }
+
+      .quote-copy {
+        flex: 1;
+        min-width: 0;
+      }
+
+      #quote-text {
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-size: clamp(20px, 3.2vw, 28px);
+        line-height: 1.35;
+        color: var(--ivory);
+        margin: 0 0 16px;
+        min-height: 3.6em;
+      }
+
+      #quote-author {
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        color: var(--gold);
+        margin: 0;
+      }
+
+      .buttons {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(201, 162, 39, 0.2);
+        flex-wrap: wrap;
+      }
+
+      #new-quote {
+        background: var(--gold);
+        color: white;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 12px 22px;
+        transition:
+          background 0.15s ease,
+          transform 0.1s ease;
+      }
+
+      #copy-quote,
+      #play-line {
+        background: transparent;
+        color: var(--ivory-dim);
+        font-size: 13px;
+        padding: 12px 16px;
+        border: 1px solid rgba(241, 234, 217, 0.25);
+      }
+
+      #copy-quote.copied {
+        color: var(--gold);
+        border-color: var(--gold-dim);
+      }
+
+      .logo {
+        position: relative;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-bottom: 40px;
+      }
+
+      .logo img {
+        width: 400px;
+        height: 230px;
+      }
+
+      #quote-card {
+        width: 110px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="The REAL Deadlock logo.webp" alt="Logo" />
+    </div>
+    <div class="flipper">
+      <div class="quotes">
+        <div class="quote-row">
+          <img id="quote-card" src="" alt="" />
+          <div class="quote-copy">
+            <p id="quote-text"></p>
+            <p id="quote-author"></p>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button id="new-quote">New quote</button>
+          <button id="copy-quote">Copy</button>
+          <button id="play-line">Play line</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

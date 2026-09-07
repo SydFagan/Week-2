@@ -1,0 +1,178 @@
+:root {
+  --forest: #1b2a22;
+  --forest-deep: #142019;
+  --ivory: #f1ead9;
+  --ivory-dim: #c9c2af;
+  --gold: #c9a227;
+  --gold-dim: #8e7420;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--forest);
+  color: var(--ivory);
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.stage {
+  width: 100%;
+  max-width: 640px;
+  position: relative;
+}
+
+.mark {
+  position: absolute;
+  top: -70px;
+  left: -10px;
+  font-family: "Fraunces", serif;
+  font-size: 220px;
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.14;
+  pointer-events: none;
+  user-select: none;
+}
+
+.card {
+  position: relative;
+  background: var(--forest-deep);
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: 4px;
+  padding: 64px 56px 48px;
+}
+
+#quote-text {
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: clamp(24px, 4vw, 34px);
+  line-height: 1.35;
+  color: var(--ivory);
+  margin: 0 0 28px;
+  min-height: 2.7em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+#quote-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#quote-author {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.08s;
+}
+
+#quote-author.visible {
+  opacity: 1;
+}
+
+#quote-author::before {
+  content: "— ";
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(201, 162, 39, 0.2);
+}
+
+button {
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+}
+
+#new-quote {
+  background: var(--gold);
+  color: var(--forest-deep);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 22px;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+#new-quote:hover {
+  background: #ddb531;
+}
+#new-quote:active {
+  transform: scale(0.97);
+}
+
+#copy-quote {
+  background: transparent;
+  color: var(--ivory-dim);
+  font-size: 13px;
+  padding: 12px 16px;
+  border: 1px solid rgba(241, 234, 217, 0.25);
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+#copy-quote:hover {
+  color: var(--ivory);
+  border-color: rgba(241, 234, 217, 0.5);
+}
+
+#copy-quote.copied {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+}
+
+.counter {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--ivory-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 48px 28px 36px;
+  }
+  .mark {
+    font-size: 140px;
+    top: -40px;
+    left: -4px;
+  }
+  .controls {
+    flex-wrap: wrap;
+  }
+  .counter {
+    margin-left: 0;
+    width: 100%;
+    order: 3;
+  }
+}
